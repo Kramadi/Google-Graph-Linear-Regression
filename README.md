@@ -1,6 +1,5 @@
 Google graph linear regression
 
-
 ![image](https://user-images.githubusercontent.com/46372074/120939266-f1d34300-c71f-11eb-8b19-f1134b28c4c0.png)
 
 
