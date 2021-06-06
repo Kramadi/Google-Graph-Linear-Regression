@@ -6,11 +6,11 @@
     <script type="text/javascript">
       google.charts.load('current', { callback: drawChart, packages:['corechart', 'line'] });
       function drawChart() {
-       var data = new google.visualization.DataTable();
-      data.addColumn('number', 'x');
-      data.addColumn('number', 'y0');
+       var DataPoint = new google.visualization.DataTable();
+      DataPoint.addColumn('number', 'x');
+      DataPoint.addColumn('number', 'y0');
 
-         data.addRows([
+         DataPoint.addRows([
           [ 10,	118.124],
           [ 15,	196.865],
           [ 20,	400.873],
@@ -74,16 +74,16 @@
           [ 310,	1044.658]
         ]); 
         
-        var data2 = new google.visualization.DataTable();
-        data2.addColumn('number', 'x');
-        data2.addColumn('number', 'y0');
+        var DataLinear = new google.visualization.DataTable();
+        DataLinear.addColumn('number', 'x');
+        DataLinear.addColumn('number', 'y0');
 
-        data2.addRows([
+        DataLinear.addRows([
           [ 25,	100],
           [ 300,	1100]
         ]);
          
-        var joinedData = google.visualization.data.join(data, data2, 'full', [[0, 0]], [1], [1]);
+        var joinedData = google.visualization.data.join(DataPoint, DataLinear, 'full', [[0, 0]], [1], [1]);
 
         var options = {
           title: 'Regression analysis',
