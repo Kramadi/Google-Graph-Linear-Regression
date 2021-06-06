@@ -1,0 +1,120 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="DataPointTest2.json"></script>
+    <script type="text/javascript">
+      google.charts.load('current', { callback: drawChart, packages:['corechart', 'line'] });
+      function drawChart() {
+       var data = new google.visualization.DataTable();
+      data.addColumn('number', 'x');
+      data.addColumn('number', 'y0');
+
+         data.addRows([
+          [ 10,	118.124],
+          [ 15,	196.865],
+          [ 20,	400.873],
+          [ 25,	263.569],
+          [ 30,	267.730],
+          [ 35,	292.275],
+          [ 40,	243.812],
+          [ 45,	165.273],
+          [ 50,	322.050],
+          [ 55,	366.156],
+          [ 60,	426.611],
+          [ 65,	284.503],
+          [ 70,	52.511],
+          [ 75,	559.758],
+          [ 80,	370.591],
+          [ 85,	245.489],
+          [ 90,	377.453],
+          [ 95,	560.488],
+          [ 100,  234.895],
+          [ 105,  302.506],
+          [ 110,  534.258],
+          [ 115,  518.332],
+          [ 120,	338.442],
+          [ 125,	522.295],
+          [ 130,	564.970],
+          [ 135,	537.262],
+          [ 140,	607.285],
+          [ 145,	682.893],
+          [ 150,	465.564],
+          [ 155,	387.423],
+          [ 160,	573.979],
+          [ 165,  612.428],
+          [ 170,	487.898],
+          [ 175,	566.344],
+          [ 180,	419.723],
+          [ 185,	699.052],
+          [ 190,	608.609],
+          [ 195,	748.980],
+          [ 200,	725.585],
+          [ 205,	597.894],
+          [ 210,	852.804],
+          [ 215,	862.287],
+          [ 220,	730.603],
+          [ 225,	936.013],
+          [ 230,	713.103],
+          [ 235,	822.611],
+          [ 240,	955.536],
+          [ 245,	800.073],
+          [ 250,	959.359],
+          [ 255,	670.649],
+          [ 260,	853.215],
+          [ 265,	854.788],
+          [ 270,	746.965],
+          [ 275,	1015.260],
+          [ 280,	960.037],
+          [ 285,	1122.207],
+          [ 290,	806.329],
+          [ 295,	1104.558],
+          [ 300,	1036.273],
+          [ 305,	1017.928],
+          [ 310,	1044.658]
+        ]); 
+        
+        var data2 = new google.visualization.DataTable();
+        data2.addColumn('number', 'x');
+        data2.addColumn('number', 'y0');
+
+        data2.addRows([
+          [ 25,	100],
+          [ 300,	1100]
+        ]);
+         
+        var joinedData = google.visualization.data.join(data, data2, 'full', [[0, 0]], [1], [1]);
+
+        var options = {
+          title: 'Regression analysis',
+          hAxis: {title: 'X(i)', minValue: 0, maxValue: 50},
+          vAxis: {title: 'Y(i)', minValue: 0, maxValue: 50},
+            legend: 'none',
+            interpolateNulls: true,
+            series: {
+              0: {
+                type: 'scatter',  
+                color: "Blue",
+                pointSize: 5
+            },
+              1: {
+                type: 'line', 
+                color: "Red",
+                pointSize: 0,
+                lineWidth: 2
+            }
+          }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_regression'));
+
+        chart.draw(joinedData, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_regression" style="width: 900px; height: 500px;"></div>
+    <div id="chart_diagram" style="width: 900px; height: 500px;"></div>
+    
+  </body>
+</html>
