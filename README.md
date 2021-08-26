@@ -14,3 +14,6 @@ Data points (X; Y)
 and data linear (X; Y)
 
 ![image](https://user-images.githubusercontent.com/46372074/120939322-38c13880-c720-11eb-8827-92cd83a5d689.png)
+
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/S6S75YFYX)
